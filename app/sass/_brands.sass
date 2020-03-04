@@ -1,0 +1,119 @@
+
+// ----- Brands v0.02 - 15.07.2019 -----
+
+#brands
+   display: grid
+   grid-template-columns: auto minmax(auto, 1680px) auto
+   grid-template-rows: 360px auto 180px
+   background-color: #fff
+
+   .carousel_brands
+      width: calc(100% - 100px)
+      margin: 0 auto
+      display: grid
+      position: relative
+      grid-column: 2 / 3
+      grid-row: 2 / 3
+      grid-template-rows: auto
+      padding: 0 20px
+
+   .caourusel_brands__logo
+      height: 120px
+      margin:
+         right: 20px
+      .bg
+         width: 200px
+         height: 120px
+         margin: 0 auto
+         background: url(../img/brands.svg) no-repeat
+      .bg::before
+         content: ''
+         position: absolute
+         width: inherit
+         height: inherit
+         margin: 0 auto
+         background: url(../img/brands-hover.svg) no-repeat
+         opacity: 0.001
+         transition: opacity .3s, background-position 0s .3s
+
+      #ya
+         background-position: 0 0
+      #mail
+         background-position: -200px 0
+      #mts
+         background-position: -400px 0
+      #tele2
+         background-position: -600px 0
+      #sh
+         background-position: -800px 0
+      #fer
+         background-position: -1000px 0
+      #fut
+         background-position: -1200px 0
+
+   .caourusel_brands__logo:hover
+      .bg
+         &:before
+            content: ''
+            opacity: 1
+            transition: opacity .3s, background-position 0s 0s
+
+      .bg#ya::before
+         background-position: 0 0
+      .bg#mail::before
+         background-position: -200px 0
+      .bg#mts::before
+         background-position: -400px 0
+      .bg#tele2::before
+         background-position: -600px 0
+      .bg#sh::before
+         background-position: -800px 0
+      .bg#fer::before
+         background-position: -1000px 0
+      .bg#fut::before
+         background-position: -1200px 0
+
+   .owl-nav
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      .owl-prev, .owl-next
+         position: absolute
+         width: 50px
+         height: 120px
+         opacity: .7
+         transition: .3s
+
+      .owl-prev:hover, .owl-next:hover
+         opacity: .9
+      .owl-prev
+         left: -30px
+         .caourusel__nav_prev, .caourusel__nav_prev::before
+            background-color: #000
+            position: absolute
+         .caourusel__nav_prev
+            left: 50%
+            width: 2px
+            height: 24px
+            transform: translateX(-50%) translateY(-4px) rotate(-45deg)
+         .caourusel__nav_prev::before
+            content: ''
+            width: 23px
+            height: 2px
+
+      .owl-next
+         right: -30px
+         .caourusel__nav_next, .caourusel__nav_next::before
+            background-color: #000
+            position: absolute
+         .caourusel__nav_next
+            top: 50%
+            right: 50%
+            width: 2px
+            height: 24px
+            transform: translateX(50%) translateY(-20px) rotate(135deg)
+         .caourusel__nav_next::before
+            content: ''
+            width: 23px
+            height: 2px

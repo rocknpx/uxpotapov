@@ -1,0 +1,194 @@
+// ----- Contacts v0.04 - 10.08.2019 -----
+
+#contacts
+   display: grid
+   grid-template-columns: auto minmax(auto, 1680px) auto
+   grid-template-rows: 300px auto 60px
+   .contacts-content
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: auto
+      position: relative
+      grid-column: 2 / 3
+      grid-row: 2 / 3
+
+form
+   position: relative
+   min-width: 320px
+   max-width: 640px
+   padding: 0 20px
+   grid-column: 1 / 2
+   grid-row: 1 / 2
+   .form-conf
+      font-size: 16px
+   .form-podzag
+      font-family: $zag_txt
+      font-size: 20px
+      text-transform: uppercase
+
+.input-wrapper
+   &::after
+      content: ''
+      width: 0
+.is-focused
+   &.input-wrapper
+      &::after
+         content: ''
+         position: absolute
+         left: 0
+         bottom: 0
+         width: 100%
+         height: 2px
+         background-color: $reg-txt-color
+         transition: .4s
+         transform-origin: 0 0
+      .inp-line-txt
+         background-color: rgba(0, 0, 0, .016)
+
+.input-wrapper
+   position: relative
+   margin: 20px 0
+   .input_label
+      display: inline-block
+      position: relative
+      transform: translate(12px, 54px)
+      transition: transform 0.3s, scale 0.3s, color 0.3s
+      transform-origin: 0 50%
+      color: rgba(0, 0, 0, .3)
+.has-label
+   .input_label
+      transform: translate(12px, 12px) scale(0.8)
+      color: rgba(0, 0, 0, 1)
+
+
+.inp-line-txt
+   position: relative
+   display: block
+   width: 100%
+   min-width: 100%
+   max-width: 100%
+   height: 56px
+   margin-top: 10px
+   border: none
+   outline: none
+   border-bottom: 1px solid $reg-txt-color
+   padding-bottom: 10px
+   padding: 12px
+   background-color: rgba(0, 0, 0, .03)
+
+.inp-line-txt:nth-child(4)
+   margin-top: 0
+.inp-txt-area
+   min-height: 120px
+   max-height: 360px
+
+.form-button
+   display: block
+   margin: 20px 0 0 auto
+   padding-top: 15px
+   padding-bottom: 15px
+   width: 50%
+   cursor: pointer
+   transition: background-color .3s, top .4s, box-shadow .6s, transform .4s
+   &:hover
+      transform: translateY(-2px)
+
+.success
+   display: none
+   position: absolute
+   grid-column: 1 / 2
+   left: 0
+   right: 0
+   top: 0
+   bottom: 0
+   text-transform: uppercase
+   font-family: $zag_txt
+   font-weight: bold
+
+   span
+      text-align: center
+      margin: auto
+      transform: translateY(-40px)
+      span
+         font-size: 56px
+   & ~ *
+      transition: .5s
+   &.active
+      & ~ *
+         opacity: .5
+         filter: blur(10px)
+
+.all-my-contact
+   margin-top: 90px
+   padding: 0 20px
+   grid-column: 2 / 3
+   grid-row: 1 / 2
+   a, a:visited
+   	color: $reg-txt-color
+   	transition: .4s
+   	&:hover, &:active, &:focus
+   		color: $accent
+
+   .cont-razdel:last-child
+      &::after
+         display: none
+   .cont-razdel
+      position: relative
+      margin-top: 60px
+      &::after
+         content: ''
+         position: absolute
+         left: 0
+         bottom: 0
+         width: 20px
+         height: 1px
+         transform: translateY(16px)
+         background-color: $reg-txt-color
+
+      .cont-zag
+         font-size: 14px
+         letter-spacing: 4px
+         opacity: .6
+         margin-bottom: 6px
+         text-transform: uppercase
+   .cont-razdel:first-child
+      margin-top: 0
+   .cont-link
+      padding: 10px 36px 10px 0
+      color: $reg-txt-color
+      font-size: 20px
+
+
+
+
+// ----- Media -----
+
+@media (max-width: 1000px)
+
+   #contacts
+      .contacts-content
+         grid-template-columns: 1fr
+         grid-template-rows: auto auto
+
+   form
+      padding: 0 20px
+      grid-column: 1 / 2
+      grid-row: 1 / 2
+
+   .success
+      grid-column: 1 / 2
+      grid-row: 1 / 2
+
+   .all-my-contact
+      margin-top: 90px
+      padding: 0 20px
+      grid-column: 1 / 2
+      grid-row: 2 / 3
+
+@media (max-width: 480px)
+   form
+      min-width: 200px
+   .form-button
+      margin-left: 0
+      margin-right: 0
+      width: 100%

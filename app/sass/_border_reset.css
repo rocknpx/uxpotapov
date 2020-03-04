@@ -1,0 +1,5 @@
+/* ---- reset Borders v0.01 - 01.05.2019 ---- */
+
+a:focus{outline:none;}
+a {outline:none;}
+* {outline:none;}

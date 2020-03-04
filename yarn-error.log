@@ -1,0 +1,62 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/vladimirpotapov/.npm-global/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/vladimirpotapov/uxp/package.json: Unexpected string in JSON at position 367
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "uxpotapov",
+    "version": "1.0.0",
+    "description": "portfolio",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "rocknpx",
+    "license": "ISC",
+    "devDependencies": {
+      "@fortawesome/fontawesome-free": "^5.9.0",
+      "browser-sync": "^2.26.5",
+      "del": "^5.0.0",
+      "gulp": "^3.9.1"
+      "gulp-autoprefixer": "^6.1.0",
+      "gulp-cache": "^1.1.1",
+      "gulp-clean-css": "^4.2.0",
+      "gulp-concat": "^2.6.1",
+      "gulp-imagemin": "^6.0.0",
+      "gulp-notify": "^3.2.0",
+      "gulp-rename": "^1.4.0",
+      "gulp-rsync": "0.0.8",
+      "gulp-sass": "^4.0.2",
+      "gulp-uglify": "^3.0.2",
+      "gulp-util": "^3.0.8",
+      "vinyl-ftp": "^0.6.1"
+    },
+    "dependencies": {
+      "npm-check-updates": "^3.1.18"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

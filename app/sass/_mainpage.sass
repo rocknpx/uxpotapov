@@ -1,0 +1,287 @@
+// ---- Mainpage Content v0.05 - 10.08.2019 ----
+
+.mainpage
+   position: relative
+   height: 100vh
+   min-height: 700px
+   background-color: #fff
+   font-family: $zag_txt
+   text-decoration: none
+   color: #000
+   min-height: 700px
+   box-shadow: 0px 12px 24px -6px rgba(0, 0, 0, 0.08)
+   .mainpage_txtblock
+      position: absolute
+      top: 120px
+      bottom: 60px
+      width: calc(100% - 240px)
+      transform: translateX(120px)
+      font-size: 50px
+      line-height: 1.25
+      &::after, &::before
+         content: ''
+         position: absolute
+         background-color: #000
+         bottom: 60px
+         left: 60px
+         transform: translate(-50%, 50%)
+      &::before
+         width: 4px
+         height: 18px
+         z-index: 1
+      &::after
+         width: 18px
+         height: 4px
+      .txt_block_wrapper
+         position: relative
+         width: 100%
+         height: 100%
+         .mainpage_bg
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 120px
+            left: 60px
+            background: url(../img/dots-shape-bulbs.svg) no-repeat 120px top
+            background-size: contain
+
+         .txtblock_txt
+            position: absolute
+            width: calc(100% - 120px)
+            bottom: 0
+            margin: 0 0 120px 120px
+            z-index: 1
+            .mainpage-zag2
+               display: inline-block
+               position: relative
+               font-size: 40px
+               margin-top: -20px
+               &::before
+                  content: ''
+                  position: absolute
+                  background-color: $accent
+                  bottom: 0
+                  width: 100%
+                  height: 10px
+                  z-index: -1
+
+            .mainpage-zag3
+               display: block
+               font-size: 18px
+               font-weight: normal
+               letter-spacing: 4px
+               margin-bottom: 6px
+               text-transform: uppercase
+               margin-top: 20px
+               margin-left: 10px
+         &::before, &::after
+            content: ''
+            position: absolute
+            background-color: #e6e6e6
+         &::before
+            width: 1px
+            height: 100%
+            top: 0
+            left: 60px
+            transform: translateX(-50%)
+         &::after
+            width: 100%
+            height: 1px
+            bottom: 60px
+            left: 0
+            transform: translateY(50%)
+
+
+// ----- Mainpage Scroll Bar v0.01 - 11.07.2019 -----
+
+.mainpage__scrollbar
+   position: absolute
+   top: 0
+   left: 0
+   bottom: 0
+   width: 60px
+   margin: 120px 0
+   height: calc(100vh - 240px)
+
+   .mainpage_scrollbar__wrapper
+      position: relative
+      height: inherit
+
+.mainpage_scrollbar_wrapper__txt,
+.mainpage_scrollbar_wrapper__line,
+.mainpage_scrollbar_wrapper__arrow,
+.mainpage_scrollbar_wrapper__arrow::before
+   position: absolute
+
+.mainpage_scrollbar_wrapper__txt
+   top: 14px
+   left: 6px
+   transition: .4s
+   transform: rotate(-90deg)
+
+.mainpage_scrollbar_wrapper__line
+   top: 50%
+   left: 50%
+   width: 2px
+   height: 60px
+   background-color: #000
+   transform: translateX(-50%) translateY(calc(-50% + 16px))
+   transition: .4s .2s
+
+.mainpage_scrollbar_wrapper__arrow,
+.mainpage_scrollbar_wrapper__arrow::before
+   background-color: #000
+
+.mainpage_scrollbar_wrapper__arrow
+   bottom: 40px
+   left: 50%
+   width: 2px
+   height: 12px
+   transform: translateX(2.5px) rotate(-135deg)
+   animation: arrow 2s ease-out infinite
+   transition: .4s .4s
+
+.mainpage_scrollbar_wrapper__arrow::before
+   content:: ''
+   width: 12px
+   height: 2px
+
+.mainpage__scrollbar:hover .mainpage_scrollbar_wrapper__line
+   top: 100%
+   height: 30px
+   transform: translateX(-50%) translateY(calc(-100% - 9px))
+   transition: .4s .2s
+
+.mainpage__scrollbar:hover .mainpage_scrollbar_wrapper__txt
+   top: calc(100% - 90px)
+   transition: .4s .4s
+
+.mainpage__scrollbar:hover .mainpage_scrollbar_wrapper__arrow
+   bottom: 6px
+   transition: .4s
+   animation: none
+
+
+
+// ----- Mainpage Social Media Bar v0.01 - 11.07.2019 -----
+
+.mainpage__smediabar
+   position: absolute
+   top: calc(50% - 50px)
+   transform: translateY(-50%)
+   right: 0
+   width: 60px
+   height: 300px
+
+.mainpage_smediabar__link
+   position: relative
+   width: 60px
+   height: 60px
+   padding: 15px 10px 10px
+   text-align: center
+   transition: .3s
+   float: right
+
+.mainpage_smediabar__link:hover
+   color: $accent
+   text-decoration: underline
+
+.mainpage_smediabar__link::before
+   content: ''
+   width: 0
+   height: 0
+   background-color: $accent
+   border-radius: 50%
+   position: absolute
+   top: 50%
+   left: 2px
+   transform: translateX(100%) translateY(-50%)
+   transition: .4s
+
+.mainpage_smediabar__link:hover::before
+   content: ''
+   width: 4px
+   height: 4px
+   background-color: $accent
+   border-radius: 50%
+   position: absolute
+   top: 50%
+   left: 0
+   transform: translateX(100%) translateY(-50%)
+
+
+
+// ----- Media -----
+
+@media (max-width: 1366px)
+   .mainpage
+      .mainpage_txtblock
+         font-size: 32px
+         .txt_block_wrapper
+            .mainpage_bg
+               left: 0
+            .txtblock_txt
+
+
+@media (max-width: 960px)
+   .mainpage
+      .mainpage_txtblock
+         font-size: 24px
+         width: calc(100% - 120px)
+         transform: translateX(60px)
+         .txt_block_wrapper
+            .mainpage_bg
+               display: none
+            .txtblock_txt
+               height: auto
+               width: auto
+               min-width: 460px
+               margin: 60px 0 0 60px
+               transform: translate(-85px, -267px) rotate(-90deg)
+
+@media (max-width: 480px)
+   .mainpage
+      .mainpage_txtblock
+         font-size: 24px
+         width: calc(100% - 90px)
+         transform: translateX(30px)
+         &::after, &::before
+            bottom: 30px
+            left: 30px
+         .txt_block_wrapper
+            .mainpage_bg
+               display: none
+            .txtblock_txt
+               margin: 30px 0 0 30px
+               transform: translate(-106px, -220px) rotate(-90deg)
+            &::before, &::after
+               content: ''
+               position: absolute
+               background-color: #e6e6e6
+            &::before
+               left: 30px
+               transform: translateX(-50%)
+            &::after
+               bottom: 30px
+               left: 0
+               transform: translateY(50%)
+   .mainpage__scrollbar
+      display: none
+
+@media (max-width: 360px)
+   .mainpage
+      .mainpage_txtblock
+         font-size: 20px
+         .txt_block_wrapper
+            .mainpage_bg
+            .txtblock_txt
+               transform: translate(-116px, -206px) rotate(-90deg)
+
+@media (max-height: 800px) and (max-width: 480px)
+   .mainpage
+      .mainpage_txtblock
+         font-size: 20px
+         .txt_block_wrapper
+            .mainpage_bg
+            .txtblock_txt
+               transform: translate(-120px, -220px) rotate(-90deg)
